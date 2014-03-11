@@ -14,8 +14,18 @@ Route::pattern('id', '[0-9]+');
 
 Route::get('series', 'SeriesController@index');
 
+/*
+|--------------------------------------------------------------------------
+| Homepage
+|--------------------------------------------------------------------------
+*/
+Route::get('/', 'HomeController@homepage');
 
-/* Legacy API Calls */
+/*
+|--------------------------------------------------------------------------
+| Legacy API Calls
+|--------------------------------------------------------------------------
+*/
 Route::any('api/GetSeries.php', 'LegacyApiController@getSeries');
 Route::any('api/{apikey}/series/{id}/en.xml', 'LegacyApiController@getSeriesBaseRecord');
 
